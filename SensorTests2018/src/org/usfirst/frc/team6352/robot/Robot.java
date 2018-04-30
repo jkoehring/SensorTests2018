@@ -7,7 +7,13 @@
 
 package org.usfirst.frc.team6352.robot;
 
+import org.usfirst.frc.team6352.robot.subsystems.TFMini;
+
 import edu.wpi.first.wpilibj.RobotController;
+import edu.wpi.first.wpilibj.SerialPort;
+import edu.wpi.first.wpilibj.SerialPort.Parity;
+import edu.wpi.first.wpilibj.SerialPort.Port;
+import edu.wpi.first.wpilibj.SerialPort.StopBits;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -23,8 +29,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends TimedRobot
 {
+	public static final TFMini tfMini = new TFMini(new SerialPort(115200, Port.kOnboard, 8, Parity.kNone, StopBits.kOne));
 	public static OI m_oi;
-	
 	
 	// The command to run in autonomous mode:
 	private Command autonomousCommand = null;
