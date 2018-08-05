@@ -29,7 +29,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends TimedRobot
 {
-	public static final TFMini tfMini = new TFMini(new SerialPort(115200, Port.kOnboard, 8, Parity.kNone, StopBits.kOne));
+	//public static final TFMini tfMini = new TFMini(new SerialPort(115200, Port.kOnboard, 8, Parity.kNone, StopBits.kOne));
+	public static final TFMini tfMini = new TFMini(new SerialPort(115200, Port.kUSB2, 8, Parity.kNone, StopBits.kOne));
 	public static OI m_oi;
 	
 	// The command to run in autonomous mode:
